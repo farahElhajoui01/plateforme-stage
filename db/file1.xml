@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- New XML document created with EditiX XML Editor (http://www.editix.com) at Tue Nov 10 21:04:00 WET 2020 -->
+
+
+
+  
+<utilisateurs>
+
+   <utilisateur ID="u1" type="lauréat/étudiant" >
+    <nom>nom1</nom> 
+    <prenom>prenom1</prenom>
+    <adresseEmail>s@g.com</adresseEmail>
+    <photo>chemin</photo>
+    <titre>etudiant</titre>
+    <login>etudiant</login>
+    <motDePasse>kkk</motDePasse>
+
+
+    <profession>
+
+    <titre>fullstack develloper </titre>
+
+    <dateDebut>12-03-2020</dateDebut> 
+    <dateFin>12-05-2020</dateFin>
+
+    </profession>
+    <stage >
+    <titre>t1</titre>
+    <sujet>conception et réalisation d'un site web</sujet>
+    <dateDebut>12-03-2020</dateDebut> 
+    <dateFin>12-05-2020</dateFin>
+    <description>d1</description>
+  </stage>
+  <stage >
+    <titre>t2</titre>
+    <sujet>conception et réalisation d'un site web</sujet>
+    <dateDebut>12-03-2020</dateDebut> 
+    <dateFin>12-05-2020</dateFin>
+    <description>d1</description>
+  </stage>
+   </utilisateur>
+  </utilisateurs>
+  
+  
+  
+ 
