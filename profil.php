@@ -1,10 +1,16 @@
 <?php
 $données=simplexml_load_file('db/file1.xml');
+//$xml = new SimpleXMLElement('db/file1.xml');
 $utilisateurs=$données["utilisateur"];
 //echo 'nubmer of elements'.count($utilisateurs);
 //var_dump($données[0]);
 //$data= $données->utilisateurs->utilisateur[1];
-var_dump($données);
+//var_dump($données);
+
+$utilisateur=$données->xpath("//utilisateur[@ID='1']");
+$stages = $données->xpath("//utilisateur[@ID='1']/stage");
+$professions = $données->xpath("//utilisateur[@ID='1']/profession");
+
 ?>
 
 
@@ -477,14 +483,22 @@ var_dump($données);
 								</figure>
 							</div>
 						</div>
-						<div class="col-lg-10 col-sm-9">
-							<div class="timeline-info">
+						<div class="col-lg-10 col-sm-9" style="padding-top:1%">
+							<div class="timeline-info" style="padding-left:0%">
 								<ul>
-									<li class="admin-name">
-									  <h5>Janice Griffith</h5>
+									<li class="admin-name" >
+									 
+									<?php foreach($utilisateur as $u) { ?>
+												<a title="" href="#"></a>
+									<h5><?php echo $u->prenom  ?>  <?php echo $u->nom ?></h5>	
+									<?php } ?>
+									 
 									</li>
-									<li class="admin-name" style="margin-left:42%;">
-										<h5>PHP Full stack developer </h5>
+									<li class="admin-name" style="margin-left:30%;">
+									
+									<?php foreach($utilisateur as $u) { ?>
+												<a title="" href="#"></a>
+									<h5><?php echo $u->titre  ?> </h5> <?php } ?>
 									  </li>
 									
 								</ul>
@@ -506,19 +520,32 @@ var_dump($données);
 									<!-- recent photos-->
 									<div class="widget stick-widget">
 										<h4 class="widget-title">Informations</h4>
-										<ul class="naves">
+										<ul class="naves" style="padding:3%">
 											<li>
 												<i class="ti-email"></i>
-												<a title="" href="#">Gmail</a>
+												<?php foreach($utilisateur as $u) { ?>
+												<a title="" href="#"><?php echo $u->adresseEmail ?></a>
+												
+												<?php } ?>
 											</li>
+
 											<li>
-												<i class="ti-mobile"></i>
-												<a title="" href="inbox.html">Telephone</a>
+											   <i class="ti-mobile"></i>
+												<?php foreach($utilisateur as $u) { ?>
+												<a title="" href="#"><?php echo $u->tel ?></a>
+												
+												<?php } ?>
 											</li>
+											
 											<li>
-												<i class="ti-map-alt"></i>
-												<a title="" href="page.html">Adresse</a>
+											   <i class="ti-map-alt"></i>
+												<?php foreach($utilisateur as $u) { ?>
+												<a title="" href="#"><?php echo $u->adresse ?></a>
+												
+												<?php } ?>
 											</li>
+
+											
 											
 											
 										</ul>
@@ -531,58 +558,37 @@ var_dump($données);
 										<h5 class="f-title"><i class="ti-files"></i>Experiences Professionnelles </h5>
 										<div class="notification-box">
 											<ul>
-												<li>
+
+											<?php 
+											foreach($professions as $profession) {
+												if(count($professions)>0)
+                                                {    	?>
+                                               <li>	
 													<figure><img src="images/resources/job.png" style="width:40px" alt=""></figure>
 													<div class="notifi-meta">
-														<p>1 ere experience as full stack</p>
-														<span>Date debut - Date fin</span>
-														<p>description</p>
+														<p><?php echo $profession->titre?></p>
+														<span><?php echo $profession->dateDebut?> jusqu'à <?php echo $profession->dateFin?></span>
 
 													</div>
 													<i class="del fa fa-close"></i>
 												</li>
-												<li>
-													<figure><img src="images/resources/internship.png" alt=""></figure>
-													<div class="notifi-meta">
-														<p>stage experience</p>
-														<span>Date debut - Date fin</span>
-														<p>sujet</p>
-														<p>description</p>
-														
-
-
-													</div>
-													<i class="del fa fa-close"></i>
-												</li>
-												<li>
-													<figure><img src="images/resources/internship.png" alt=""></figure>
-													<div class="notifi-meta">
-														<p>stage experience</p>
-														<span>Date debut - Date fin</span>
-														<p>sujet</p>
-														<p>description</p>
-														
-
-
-													</div>
-													<i class="del fa fa-close"></i>
-												</li>
-												<li>
-													<figure><img src="images/resources/internship.png" alt=""></figure>
-													<div class="notifi-meta">
-														<p>stage experience</p>
-														<span>Date debut - Date fin</span>
-														<p>sujet</p>
-														<p>description</p>
-														
-
-
-													</div>
-													<i class="del fa fa-close"></i>
-												</li>
-											
+											<?php }} ?>
 												
-												
+											<?php foreach($stages as $stage) {
+												if(count($stage)>0)
+                                                {    	?>
+                                               <li>	
+													<figure><img src="images/resources/internship.png" style="width:40px" alt=""></figure>
+													<div class="notifi-meta">
+														<p><?php echo $stage->titre?></p>
+														<span><?php echo $stage->dateDebut?> jusqu'à <?php echo $stage->dateFin?></span>
+                                                        <p><?php echo $stage->sujet?></p>
+														<p><?php echo $stage->description?></p>
+													</div>
+													<i class="del fa fa-close"></i>
+												</li>
+											<?php }} ?>
+														
 											</ul>
 										</div>
 									</div>

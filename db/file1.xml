@@ -7,16 +7,16 @@
   
 <utilisateurs>
 
-   <utilisateur ID="u1" type="lauréat/étudiant" >
-    <nom>nom1</nom> 
-    <prenom>prenom1</prenom>
+   <utilisateur ID="1" type="lauréat/étudiant" >
+    <nom>ELAAMIRI</nom> 
+    <prenom>Merieme</prenom>
     <adresseEmail>s@g.com</adresseEmail>
     <photo>chemin</photo>
-    <titre>etudiant</titre>
+    <titre>fullstack developper-PHP</titre>
     <login>etudiant</login>
     <motDePasse>kkk</motDePasse>
-
-
+    <tel>0650203070</tel>
+    <adresse>Ennakhil,Marrakech</adresse>
     <profession>
 
     <titre>fullstack develloper </titre>
@@ -25,19 +25,47 @@
     <dateFin>12-05-2020</dateFin>
 
     </profession>
-    <stage >
-    <titre>t1</titre>
+     <stage >
+    <titre>stage 1</titre>
     <sujet>conception et réalisation d'un site web</sujet>
     <dateDebut>12-03-2020</dateDebut> 
     <dateFin>12-05-2020</dateFin>
-    <description>d1</description>
+    <description>description1</description>
   </stage>
   <stage >
-    <titre>t2</titre>
+    <titre>stage2</titre>
     <sujet>conception et réalisation d'un site web</sujet>
     <dateDebut>12-03-2020</dateDebut> 
     <dateFin>12-05-2020</dateFin>
-    <description>d1</description>
+    <description>description 2</description>
+  </stage>
+   </utilisateur>
+
+     <utilisateur ID="2" type="lauréat/étudiant" >
+    <nom>nom2</nom> 
+    <prenom>prenom2</prenom>
+    <adresseEmail>s@g.com</adresseEmail>
+    <photo>chemin</photo>
+    <titre>etudiant</titre>
+    <login>etudiant</login>
+    <motDePasse>kkk</motDePasse>
+    <tel>0650203070</tel>
+    <adresse>Ennakhil,Marrakech</adresse>
+
+   
+    <stage >
+    <titre>stage 1</titre>
+    <sujet>conception et réalisation d'un site web</sujet>
+    <dateDebut>12-03-2020</dateDebut> 
+    <dateFin>12-05-2020</dateFin>
+    <description>description1</description>
+  </stage>
+  <stage >
+    <titre>stage2</titre>
+    <sujet>conception et réalisation d'un site web</sujet>
+    <dateDebut>12-03-2020</dateDebut> 
+    <dateFin>12-05-2020</dateFin>
+    <description>description 2</description>
   </stage>
    </utilisateur>
   </utilisateurs>
