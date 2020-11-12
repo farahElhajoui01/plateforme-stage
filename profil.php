@@ -10,6 +10,59 @@ $utilisateurs=$données["utilisateur"];
 $utilisateur=$données->xpath("//utilisateur[@ID='1']");
 $stages = $données->xpath("//utilisateur[@ID='1']/stage");
 $professions = $données->xpath("//utilisateur[@ID='1']/profession");
+//var_dump($professions);
+//echo $professions[0]['ID'];
+
+
+
+function removeprofession($id_exp) { 
+	echo $id_exp.'heeeeeeey';
+
+	$dom = new DOMDocument();
+	$dom->formatOutput = true;
+	$dom->preserveWhiteSpace = false;
+	$dom->load("db/file1.xml");
+	$xpath = new DOMXPath($dom);
+	$query = "//utilisateur[@ID='1']/profession[@ID='".$id_exp."']";
+	echo $query;
+
+	$nodes = $xpath->query($query);
+	$node = $nodes[0];
+	$node->parentNode->removeChild($node);
+	$dom->save("db/file1.xml", LIBXML_NOEMPTYTAG);
+	
+	echo 'done';
+    header("Refresh: '1';url='profil.php'");
+}
+function removestage($id_exp) { 
+	//echo $id_exp;
+
+	$dom = new DOMDocument();
+	$dom->formatOutput = true;
+	$dom->preserveWhiteSpace = false;
+	$dom->load("db/file1.xml");
+	$xpath = new DOMXPath($dom);
+	$query = "//utilisateur[@ID='1']/stage[@ID='".$id_exp."']";
+	echo $query;
+	$nodes = $xpath->query($query);
+	$node = $nodes[0];
+	$node->parentNode->removeChild($node);
+	$dom->save("db/file1.xml", LIBXML_NOEMPTYTAG);
+	
+	echo 'done';
+    header("Refresh: '1';url='profil.php'");
+}
+
+if (isset($_GET['removep'])) { 
+	
+	return removeprofession($_GET['removep']);
+}
+	
+	if (isset($_GET['removes'])) { 
+	
+		return removestage($_GET['removes']);
+		
+	}
 
 ?>
 
@@ -36,6 +89,18 @@ $professions = $données->xpath("//utilisateur[@ID='1']/profession");
 </head>
 <body>
 <!--<div class="se-pre-con"></div>-->
+<script>
+  async function removeprofession(e,id_exp) {
+    e.preventDefault(); 
+	document.body.innerHTML+= '<br>'+ await(await fetch('?removep='+id_exp)).text();
+	
+  
+  }
+  async function removestage(e,id_exp) {
+    e.preventDefault(); 
+    document.body.innerHTML+= '<br>'+ await(await fetch('?removes='+id_exp)).text();
+  }
+  </script>
 <div class="theme-layout">
 	
 	<div class="responsive-header">
@@ -566,11 +631,13 @@ $professions = $données->xpath("//utilisateur[@ID='1']/profession");
                                                <li>	
 													<figure><img src="images/resources/job.png" style="width:40px" alt=""></figure>
 													<div class="notifi-meta">
-														<p><?php echo $profession->titre?></p>
-														<span><?php echo $profession->dateDebut?> jusqu'à <?php echo $profession->dateFin?></span>
+														<p><?php echo $profession->titre?> </p>
+														<span><?php echo $profession->dateDebut ?> jusqu'à <?php echo $profession->dateFin?></span>
 
 													</div>
-													<i class="del fa fa-close"></i>
+													<a href="" onclick="removeprofession(event,<?php echo $professions[0]['ID'] ?>)" class="deletebtn"><i class="del fa fa-close " id="deleteitems"></i></a>
+
+													
 												</li>
 											<?php }} ?>
 												
@@ -585,7 +652,7 @@ $professions = $données->xpath("//utilisateur[@ID='1']/profession");
                                                         <p><?php echo $stage->sujet?></p>
 														<p><?php echo $stage->description?></p>
 													</div>
-													<i class="del fa fa-close"></i>
+													<a href="" onclick="removestage(event,<?php echo $stages[0]['ID'] ?>)" class="deletebtn"><i class="del fa fa-close " id="deleteitems"></i></a>
 												</li>
 											<?php }} ?>
 														
@@ -710,6 +777,7 @@ $professions = $données->xpath("//utilisateur[@ID='1']/profession");
 	
 	<script src="js/main.min.js"></script>
 	<script src="js/script.js"></script>
+	
 
 </body>	
 

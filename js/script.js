@@ -1,4 +1,11 @@
 jQuery(document).ready(function($) {
+
+
+
+
+
+
+	
 	
 	"use strict";
 	
@@ -46,10 +53,16 @@ $('.friendz-list > li, .chat-users > li').on('click', function() {
 	  });
 
 // delete notifications
-$('.notification-box > ul li > i.del').on("click", function(){
-    $(this).parent().slideUp();
+/*$('.notification-box > ul li > i.del').on("click", function(){
+	//$(this).parent().slideDown();
+	alert("u clickeeeeeeeeeed");
 	return false;
-  }); 	
+  }); */	
+  // delete experience
+  /*$('.notification-box > ul li > deleteitems').on("click", function(){
+	log('heeeeeeeeeey ECharts Map is not loaded');
+	alert("u clickeeeeeeeeeed");
+  }); */	
 
 /*--- socials menu scritp ---*/	
 	$('.f-page > figure i').on("click", function() {

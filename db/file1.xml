@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!-- New XML document created with EditiX XML Editor (http://www.editix.com) at Tue Nov 10 21:04:00 WET 2020 -->
-
-
-
-  
 <utilisateurs>
-
-   <utilisateur ID="1" type="lauréat/étudiant" >
-    <nom>ELAAMIRI</nom> 
+  <utilisateur ID="1" type="lauréat/étudiant">
+    <nom>ELAAMIRI</nom>
     <prenom>Merieme</prenom>
     <adresseEmail>s@g.com</adresseEmail>
     <photo>chemin</photo>
@@ -17,7 +10,7 @@
     <motDePasse>kkk</motDePasse>
     <tel>0650203070</tel>
     <adresse>Ennakhil,Marrakech</adresse>
-    <profession>
+    <profession ID="1">
 
     <titre>fullstack develloper </titre>
 
@@ -25,24 +18,23 @@
     <dateFin>12-05-2020</dateFin>
 
     </profession>
-     <stage >
-    <titre>stage 1</titre>
-    <sujet>conception et réalisation d'un site web</sujet>
-    <dateDebut>12-03-2020</dateDebut> 
-    <dateFin>12-05-2020</dateFin>
-    <description>description1</description>
-  </stage>
-  <stage >
-    <titre>stage2</titre>
-    <sujet>conception et réalisation d'un site web</sujet>
-    <dateDebut>12-03-2020</dateDebut> 
-    <dateFin>12-05-2020</dateFin>
-    <description>description 2</description>
-  </stage>
-   </utilisateur>
-
-     <utilisateur ID="2" type="lauréat/étudiant" >
-    <nom>nom2</nom> 
+    <stage ID="1">
+      <titre>stage1</titre>
+      <sujet>conception et réalisation d'un site web</sujet>
+      <dateDebut>12-03-2020</dateDebut>
+      <dateFin>12-05-2020</dateFin>
+      <description>description 2</description>
+    </stage>
+    <stage ID="2">
+      <titre>stage2</titre>
+      <sujet>conception et réalisation d'un site web</sujet>
+      <dateDebut>12-03-2020</dateDebut>
+      <dateFin>12-05-2020</dateFin>
+      <description>description 2</description>
+    </stage>
+  </utilisateur>
+  <utilisateur ID="2" type="lauréat/étudiant">
+    <nom>nom2</nom>
     <prenom>prenom2</prenom>
     <adresseEmail>s@g.com</adresseEmail>
     <photo>chemin</photo>
@@ -51,25 +43,27 @@
     <motDePasse>kkk</motDePasse>
     <tel>0650203070</tel>
     <adresse>Ennakhil,Marrakech</adresse>
+        <profession>
 
-   
-    <stage >
-    <titre>stage 1</titre>
-    <sujet>conception et réalisation d'un site web</sujet>
+    <titre>fullstack develloper </titre>
+
     <dateDebut>12-03-2020</dateDebut> 
     <dateFin>12-05-2020</dateFin>
-    <description>description1</description>
-  </stage>
-  <stage >
-    <titre>stage2</titre>
-    <sujet>conception et réalisation d'un site web</sujet>
-    <dateDebut>12-03-2020</dateDebut> 
-    <dateFin>12-05-2020</dateFin>
-    <description>description 2</description>
-  </stage>
-   </utilisateur>
-  </utilisateurs>
-  
-  
-  
- 
+
+    </profession>
+    <stage>
+      <titre>stage 1</titre>
+      <sujet>conception et réalisation d'un site web</sujet>
+      <dateDebut>12-03-2020</dateDebut>
+      <dateFin>12-05-2020</dateFin>
+      <description>description1</description>
+    </stage>
+    <stage>
+      <titre>stage2</titre>
+      <sujet>conception et réalisation d'un site web</sujet>
+      <dateDebut>12-03-2020</dateDebut>
+      <dateFin>12-05-2020</dateFin>
+      <description>description 2</description>
+    </stage>
+  </utilisateur>
+</utilisateurs>
