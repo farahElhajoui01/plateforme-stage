@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<offres>
+  <offre ID="o1">
+  <date>25-12-2020</date>
+  <image>images/offres/image1.jpg</image>
+   <utilisateur ID="u1">
+    <nom>nom1</nom> 
+    <prenom>prenom1</prenom>
+    <adresseEmail>s@g.com</adresseEmail>
+    <photo>chemin</photo>
+    <titre>etudiant</titre>
+    <login>etudiant</login>
+    <motDePasse>kkk</motDePasse>
+    <experience ID="ex1">
+    <titre>t1</titre>
+    <type>stage</type>
+    <dateDebut>12-03-2020</dateDebut> 
+    <dateFin>12-05-2020</dateFin>
+    <description>d1</description>
+    </experience>  
+   </utilisateur>
+
+  </offre>
+  <offre ID="o2">
+  <description>Job Description Stage PFE : Ingénieur études et développement Java JEE (H/F)
+
+Description de poste
+Dans le cadre de notre développement, le centre de production NTI coopérant sur les nouvelles technologies : Java JEE , Cobol MVS.....etc, recrute des stagiaires PFE pour son site de Casablanca.
+
+Fonctions et responsabilités
+
+Au Sein D'une Équipe Dynamique, Vous Aurez Pour Missions
+Réaliser, maintenir et tester, en toute autonomie, les programmes qui vous sont confiés en respectant les spécifications détaillées fournies, les délais et les différentes normes qualité
+•Contribuer à la dynamique de l’équipe
+Maitriser vos charges, votre reste à faire et les délais
+Appliquer les process du projet
+</description>
+  <date>25-12-2020</date>
+
+   <utilisateur ID="u1">
+    <nom>nom2</nom> 
+    <prenom>prenom1</prenom>
+    <adresseEmail>s@g.com</adresseEmail>
+    <photo>chemin</photo>
+    <titre>etudiant</titre>
+    <login>etudiant</login>
+    <motDePasse>kkk</motDePasse>
+    <experience ID="ex1">
+    <titre>t1</titre>
+    <type>stage</type>
+    <dateDebut>12-03-2020</dateDebut> 
+    <dateFin>12-05-2020</dateFin>
+    <description>d1</description>
+    </experience>
+   </utilisateur>
+  </offre>
+   
+  <offre ID="1">
+  <date>25-12-2020</date>
+    <image>images/offres/image2.jpg</image>
+
+   <utilisateur ID="u1">
+    <nom>nom3</nom> 
+    <prenom>prenom1</prenom>
+    <adresseEmail>s@g.com</adresseEmail>
+    <photo>chemin</photo>
+    <titre>etudiant</titre>
+    <login>etudiant</login>
+    <motDePasse>kkk</motDePasse>
+    <experience ID="ex1">
+    <titre>t1</titre>
+    <type>stage</type>
+    <dateDebut>12-03-2020</dateDebut> 
+    <dateFin>12-05-2020</dateFin>
+    <description>d1</description>
+    </experience>
+   </utilisateur>
+  </offre>
+</offres>

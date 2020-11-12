@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- New XML document created with EditiX XML Editor (http://www.editix.com) at Tue Nov 10 21:04:00 WET 2020 -->
+<Entreprises>
+   <Entreprise ID="e1">
+    <raisonSociale>IIP</raisonSociale>
+    <adresseEmail>contact@iip.ma</adresseEmail>
+    <tel>+212 648276399</tel>
+    <adresse>Marrakech,MA</adresse>
+   </Entreprise>
+   <Entreprise ID="e2">
+    <raisonSociale>Emerging Business Factory</raisonSociale>
+    <adresseEmail>ebf@ebf.ma</adresseEmail>
+    <tel>+212 661404643</tel>
+    <adresse>Marrakech,MA</adresse>
+   </Entreprise>
+    <Entreprise ID="e3">
+    <raisonSociale>Logigroup</raisonSociale>
+    <adresseEmail>Logigroup@logigroup.com</adresseEmail>
+    <adresseEmail>bTT@g.com</adresseEmail>
+    <tel>+212 661404656</tel>
+    <adresse>Casablanca,MA</adresse>
+   </Entreprise>
+    <Entreprise ID="e4">
+    <raisonSociale>ICOZ</raisonSociale>
+    <adresseEmail>iicoz@iicoz.com</adresseEmail>
+    <tel>+212 661404677</tel>
+    <adresse>Casablanca,MA</adresse>
+   </Entreprise>
+   <Entreprise ID="e5">
+    <raisonSociale>THALES INFORMATIQUE
+</raisonSociale>
+    <adresseEmail>THALES@thales.com</adresseEmail>
+    <tel>+212 661444677</tel>
+    <adresse>Casablanca,MA</adresse>
+   </Entreprise>
+   <Entreprise ID="e6">
+    <raisonSociale>Smart Strategies</raisonSociale>
+     <adresseEmail>SMART@smart.com</adresseEmail>
+    <tel>+212 661404697</tel>
+    <adresse>Casablanca,MA</adresse>
+   </Entreprise>
+</Entreprises>
