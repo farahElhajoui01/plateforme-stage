@@ -1,19 +1,13 @@
 <?php
+//extration des données
 $données=simplexml_load_file('db/file1.xml');
-//$xml = new SimpleXMLElement('db/file1.xml');
-$utilisateurs=$données["utilisateur"];
-//echo 'nubmer of elements'.count($utilisateurs);
-//var_dump($données[0]);
-//$data= $données->utilisateurs->utilisateur[1];
-//var_dump($données);
-
 $utilisateur=$données->xpath("//utilisateur[@ID='1']");
 $stages = $données->xpath("//utilisateur[@ID='1']/stage");
 $professions = $données->xpath("//utilisateur[@ID='1']/profession");
-//var_dump($professions);
-//echo $professions[0]['ID'];
 
 
+
+//suppression de profession par ID
 
 function removeprofession($id_exp) { 
 	echo $id_exp.'heeeeeeey';
@@ -24,16 +18,15 @@ function removeprofession($id_exp) {
 	$dom->load("db/file1.xml");
 	$xpath = new DOMXPath($dom);
 	$query = "//utilisateur[@ID='1']/profession[@ID='".$id_exp."']";
-	echo $query;
 
 	$nodes = $xpath->query($query);
 	$node = $nodes[0];
 	$node->parentNode->removeChild($node);
 	$dom->save("db/file1.xml", LIBXML_NOEMPTYTAG);
 	
-	echo 'done';
     header("Refresh: '1';url='profil.php'");
 }
+//suppression de stage par ID
 function removestage($id_exp) { 
 	//echo $id_exp;
 
@@ -43,13 +36,11 @@ function removestage($id_exp) {
 	$dom->load("db/file1.xml");
 	$xpath = new DOMXPath($dom);
 	$query = "//utilisateur[@ID='1']/stage[@ID='".$id_exp."']";
-	echo $query;
 	$nodes = $xpath->query($query);
 	$node = $nodes[0];
 	$node->parentNode->removeChild($node);
 	$dom->save("db/file1.xml", LIBXML_NOEMPTYTAG);
 	
-	echo 'done';
     header("Refresh: '1';url='profil.php'");
 }
 
@@ -63,6 +54,33 @@ if (isset($_GET['removep'])) {
 		return removestage($_GET['removes']);
 		
 	}
+
+	//enregistrer l'image choisie dans le repertoire
+	$uploaddir = 'images/users/users_';
+	$uploadfile = $uploaddir . basename($_FILES['imageprofil']['name']);
+		if (move_uploaded_file($_FILES['imageprofil']['tmp_name'], $uploadfile)) {
+	 // echo "File is valid, and was successfully uploaded.\n";
+	} else {
+	   //echo "Upload failed";
+	}
+
+
+	//modifier le chemin de la photo 
+	$dom = new DOMDocument();
+	$dom->formatOutput = true;
+	$dom->preserveWhiteSpace = false;
+	$dom->load("db/file1.xml");
+	$xpath = new DOMXPath($dom);
+	$query = "//utilisateur[@ID='1']/photo";
+	$nodes = $xpath->query($query);
+	for($i = 0; $i < $nodes->length; $i++) {
+		
+				$nodes->item($i)->nodeValue = $uploaddir . basename($_FILES['imageprofil']['name']);;
+			
+	}
+	$dom->save("db/file1.xml", LIBXML_NOEMPTYTAG);
+	
+
 
 ?>
 
@@ -537,13 +555,15 @@ if (isset($_GET['removep'])) {
 						<div class="col-lg-2 col-sm-3">
 							<div class="user-avatar">
 								<figure>
-									<img src="images/resources/user-avatar.jpg" alt="">
-									<form class="edit-phto">
+									<img src="<?php foreach($utilisateur as $u) { echo $u->photo ;} ?>" alt="">
+									<form class="edit-phto" action="" method="post" enctype="multipart/form-data">
 										<i class="fa fa-camera-retro"></i>
 										<label class="fileContainer">
-											Modifier votre photo
-											<input type="file"/>
+                                        Choisissez une autre 
+										<input type="file" name='imageprofil' />
 										</label>
+										<input type="submit" value="Valider"/>
+
 									</form>
 								</figure>
 							</div>

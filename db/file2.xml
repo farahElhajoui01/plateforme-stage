@@ -4,16 +4,19 @@
     <nom>ELAAMIRI</nom>
     <prenom>Merieme</prenom>
     <adresseEmail>s@g.com</adresseEmail>
-    <photo>images/users/users_photo-33.jpg</photo>
+    <photo>chemin</photo>
     <titre>fullstack developper-PHP</titre>
     <login>etudiant</login>
     <motDePasse>kkk</motDePasse>
     <tel>0650203070</tel>
     <adresse>Ennakhil,Marrakech</adresse>
     <profession ID="1">
-      <titre>fullstack develloper </titre>
-      <dateDebut>12-03-2020</dateDebut>
-      <dateFin>12-05-2020</dateFin>
+
+    <titre>fullstack develloper </titre>
+
+    <dateDebut>12-03-2020</dateDebut> 
+    <dateFin>12-05-2020</dateFin>
+
     </profession>
     <stage ID="1">
       <titre>stage1</titre>
@@ -40,10 +43,13 @@
     <motDePasse>kkk</motDePasse>
     <tel>0650203070</tel>
     <adresse>Ennakhil,Marrakech</adresse>
-    <profession>
-      <titre>fullstack develloper </titre>
-      <dateDebut>12-03-2020</dateDebut>
-      <dateFin>12-05-2020</dateFin>
+        <profession>
+
+    <titre>fullstack develloper </titre>
+
+    <dateDebut>12-03-2020</dateDebut> 
+    <dateFin>12-05-2020</dateFin>
+
     </profession>
     <stage>
       <titre>stage 1</titre>
